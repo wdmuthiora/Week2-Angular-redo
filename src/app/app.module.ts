@@ -7,6 +7,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { ResultsComponent } from './components/results/results.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { AboutComponent } from './components/about/about.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AboutComponent } from './components/about/about.component';
     SearchFormComponent,
     ResultsComponent,
     LandingComponent,
-    AboutComponent
+    AboutComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
