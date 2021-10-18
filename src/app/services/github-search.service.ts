@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../../environments/environment' 
 
 @Injectable({
   providedIn: 'root',
 })
+  
 export class GithubSearchService {
-  private url!: string;
-  private apiKey: string = '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';
+  
+  private accessKey: string = environment.apiKey;
+  private baseApiURL: string = environment.baseURL
 
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<any> {
+  getData(term:string): Observable<any> {
 
-    const url = 'http://api.github.com/users';
-    let apiUrl = `https://api.github.com/users/term={term}?access_token=' + apiKey`;
-    return this.http.get(url);
+    const endPoint = 'users';
+
+    let apiUrl = `${this.baseApiURL}/${endPoint}/${term}`;
+
+    return this.http.get(apiUrl);
   }
 }
