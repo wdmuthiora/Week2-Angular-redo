@@ -1,23 +1,10 @@
 <div class="container">
 
-  <!-- <nav class="navbar bg-dark navbar-dark fixed-top">
-    <br>
-    <h1><span class="navbar-text" style="color: white;">{{title}}</span></h1>
-    <br>
-  </nav> -->
-
   <nav class="navbar fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand navbar-dark bg-dark" routerLink="/search" routerLink="active">
-      {{title}}
-    </a>
-    <a class="navbar-brand navbar-dark bg-dark" routerLink="/results" routerLinkActive="active">
-      RESULTS
 
-    </a>
-
-    <a class="navbar-brand navbar-dark bg-dark" routerLink="/user-details" routerLinkActive="active">
-      USER DETAILS
-    </a>
+    <a class="navbar-brand navbar-dark bg-dark" routerLink="/landing" routerLinkActive="active"> {{title}}</a>
+    <a class="navbar-brand navbar-dark bg-dark" routerLink="/results" routerLinkActive="active"> Results </a>
+    <a class="navbar-brand navbar-dark bg-dark" routerLink="/about" routerLinkActive="active"> About </a>
 
   </nav>
 
@@ -27,6 +14,7 @@
   </div>
   <app-search-form></app-search-form>
 
-<app-results></app-results>
+  <app-results></app-results>
 </div>
+
 <router-outlet></router-outlet>
