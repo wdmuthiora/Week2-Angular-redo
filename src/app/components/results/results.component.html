@@ -1,35 +1,81 @@
 <p>results works!</p>
 <div class="container">
-
-  <div>
-    <div class="card-body">
-     
-
-        <div class="card bg-secondary">
-          <div class="card-body">
-
-            <div class="row">
-
-              <div class="col-md-4 btn-outline-secondary bg-light ">
-                <h4 class="card-title">Name display area</h4>
-                <img src="../../../assets/colorfulwallpaper.jpg" alt="user's profile photo" style="height:200px; width:200px;">
-                <p></p>
+  <div *ngIf="profile">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        {{profile.name}} <small>({{profile.login}})</small>
+        <span *ngIf="profile.company">, Works at {{profile.company}}</span>
+        {{profile.location}}
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+          </div>
+          <div class="col-sm-5">
+            <ul class="list-group">
+              <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+              <li class="list-group-item" *ngIf="profile.hireable">Available for hire</li>
+              <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}"
+                  target="_blank">{{profile.blog}}</a></li>
+              <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <div>
+              <p>
+                <span class="label label-default">{{profile.followers}} Followers</span>
+                <span class="label label-primary">Following {{profile.following}}</span>
+                <span class="label label-success">{{profile.public_gists}} Public gists</span>
+                <span class="label label-info">{{profile.public_repos}} Public Repos</span>
+              </p>
+              <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on github</a>
+              </p>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Repos</h3>
+                </div>
+                <div class="panel-body" *ngFor="let repo of repositories">
+                  <p class="clearfix">
+                    {{repo.name}} <a href="{{repo.html_url}}" target="_blank"
+                      class="btn btn-sm btn-warning pull-right">View this project on github</a>
+                  </p>
+                  <p>{{repo.description}}</p>
+                </div>
               </div>
-              <div class="col-md-8 btn-outline-secondary bg-secondary ">
-                <h4 class="card-title">Repository display area</h4>
-                <h3>Card link</h3>
-                <h3>Another link</h3>
-              </div>
-
             </div>
           </div>
         </div>
-
       </div>
-
+    </div>
+  </div>
+<!--  -->
+  <div>
+    <div class="card-body">
+      <div class="card bg-secondary">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 btn-outline-secondary bg-light ">
+              <h4 class="card-title">Name display area</h4>
+              <img src="../../../assets/colorfulwallpaper.jpg" alt="user's profile photo"
+                style="height:200px; width:200px;">
+              <p></p>
+            </div>
+            <div class="col-md-8 btn-outline-secondary bg-secondary ">
+              <h4 class="card-title">Repository display area</h4>
+              <h3>Card link</h3>
+              <h3>Another link</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <br>
 </div>
+
+<!--  -->
 <div class="container mt-3">
   <h2>Basic Table</h2>
   <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
@@ -60,3 +106,6 @@
     </tbody>
   </table>
 </div>
+
+
+<!--  -->
