@@ -1,1 +1,20 @@
 <p>search-form works!</p>
+<div class="container-fluid">
+
+  <hr>
+  <h5 class="text-center"></h5>
+
+  <form>
+
+    <div class="form-group ">
+      <label for="author">Search GitHub</label>
+      <input class="form-control" type="text" author="author" name="author"
+        placeholder="Enter username or repository name" #text>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-lg btn-dark btn-outline-warning" (click)="doSearch(text.value)">Search</button>
+    <hr>
+  </form>
+
+</div>
