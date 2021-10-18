@@ -13,9 +13,8 @@ const routes: Routes = [
   { path: 'results', component: ResultsComponent },
   { path: 'landing', component: LandingComponent },
   { path: 'about', component: AboutComponent },
-  // '**' The wildcards define a route that is not present in our routes array
-  { path: '**', component: NotFoundComponent },
   { path: 'search', component: SearchFormComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

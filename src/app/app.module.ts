@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +10,7 @@ import { ResultsComponent } from './components/results/results.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { GithubSearchService } from './services/github-search.service';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ResultsComponent,
     LandingComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [GithubSearchService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
