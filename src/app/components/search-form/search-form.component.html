@@ -8,12 +8,12 @@
         <div class="card-body">
           <form>
             <div class="form-group ">
-              <label for="author">Search GitHub</label>
-              <input class="form-control" type="text" author="author" name="author"
+              <label for="searchItem">Search GitHub</label>
+              <input class="form-control" type="text" 
                 placeholder="Enter username or repository name" #text>
             </div>
             <br>
-            <button type="submit" class="btn btn-lg btn-dark btn-outline-warning">Search</button>
+            <button type="submit" (click)="doSearch(text.value)" class="btn btn-lg btn-dark btn-outline-warning">Search</button>
             <hr>
           </form>
         </div>

@@ -12,8 +12,7 @@ export class GithubSearchService {
   constructor(private http: HttpClient) {}
 
   getData(): Observable<any> {
-    // const url = 'http://api.github.com/users';
-    // return this.http.get<any>(url);
+
     const url = 'http://api.github.com/users';
     let apiUrl = `https://api.github.com/users/term={term}?access_token=' + apiKey`;
     return this.http.get(url);
