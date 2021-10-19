@@ -1,6 +1,6 @@
 # GithubSearch
 
-This project was deployed on [Github Search App](https://wdmuthiora.github.io/Week2-Angular-redo/). It allows a user to add of delete Quotes, and each quote can be upvoted or downvoted, depending on its popularity.
+This project was deployed on [Github Search App](https://wdmuthiora.github.io/Week2-Angular-redo/). It allows a user to search for GitHub users/repositories (using the GitHub API), and displays the results.
 
 ## ScreenShot
 <img src="src/assets/1.png">
