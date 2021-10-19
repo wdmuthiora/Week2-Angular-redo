@@ -1,20 +1,19 @@
-  <nav class="navbar fixed-top navbar-dark bg-dark">
-    <ng-progress></ng-progress>
-    <!-- <div class="nav-pills"></div>
-    <div class="justify-content-center"></div> -->
-    <div class="container mt-2">
-      <ul class="nav ">
-        <li class="nav-item">
-          <a class="navbar-brand navbar-dark bg-dark" routerLink="/search" routerLinkActive="active"> {{title}}</a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-brand navbar-dark bg-dark " routerLink="/about" routerLinkActive="active"> About-me </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <ng-progress></ng-progress>
 
-  <hr>
-  <br>
+  <div class="container mt-2">
+    <ul class="nav ">
+      <li class="nav-item">
+        <a class="navbar-brand navbar-dark bg-dark navbar-text" routerLink="/search" routerLinkActive="active" style="color:orange; text-shadow: 0 0 3px #FF0000;"> {{title}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand navbar-dark bg-dark navbar-text" routerLink="/about" routerLinkActive="active" style="color:orange; text-shadow: 0 0 3px #FF0000;"> About-me </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<hr>
+<br>
 
 <router-outlet></router-outlet>

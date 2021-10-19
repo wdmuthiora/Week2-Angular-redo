@@ -6,9 +6,10 @@
       <div class="card bg-secondary text-white">
         <div class="card-body">
 <!--  -->
+          <hr>
           <form class="search-form" action="" #quoteForm="ngForm" (ngSubmit)="doSearch(text)">
             <div class="form-group ">
-              <label for="searchItem">Search GitHub</label>
+              <label for="searchItem" style="padding-bottom:1em" style="color:orange; text-shadow: 0 0 3px #310000;">Search GitHub</label>
               <input class="form-control" type="text" placeholder="Enter username or repository name" [(ngModel)]="text" name="text" (keyup)="findProfile()">
             </div>
             <br>
@@ -23,7 +24,7 @@
 
   <!-- results -->
 
-  <div class="card bg-dark text-white">
+  <div class="card bg-dark text-white" *ngIf="profile">
     <div *ngIf="profile">
       <div class="">
         <div class="card-header">

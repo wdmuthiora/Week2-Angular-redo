@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'about', component: AboutComponent },
   { path: 'search', component: SearchFormComponent },
-  // { path: '**', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
