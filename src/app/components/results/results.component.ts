@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { SearchFormComponent } from '../search-form/search-form.component';
+import { User } from '../../classes/user';
+
 
 @Component({
   selector: 'app-results',
@@ -6,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
+  @Input() profile = "";
+  @Input() repositories = [];
 
   constructor() { }
 

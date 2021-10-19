@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { GithubRepoSearchService } from './services/github-repo-search.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     NgProgressModule.forRoot(),
     NgProgressHttpClientModule,
   ],
