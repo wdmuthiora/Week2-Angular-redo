@@ -3,7 +3,7 @@
 This project was deployed on [Github Search App](https://wdmuthiora.github.io/Week2-Angular-redo/). It allows a user to add of delete Quotes, and each quote can be upvoted or downvoted, depending on its popularity.
 
 ## ScreenShot
-<img src="../src/assets/1.png">
+<img src="src/assets/1.png">
 <img src="src/assets/2.png">
 
 ## Development server
