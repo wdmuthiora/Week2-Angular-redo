@@ -6,22 +6,20 @@ import {environment} from '../../environments/environment'
 @Injectable({
   providedIn: 'root',
 })
-  
 export class GithubSearchService {
-  
   private accessKey: string = environment.apiKey;
-  private baseApiURL: string = environment.baseURL
+  private baseApiURL: string = environment.baseURL;
+  text!: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
+  
+  updateProfile(text: string) {
+    this.text = text;
+  }
 
-  getData(term:string): Observable<any> {
-
+  getData(term: string): Observable<any> {
     const endPoint = 'users';
-    // to get users
     let apiUrl = `${this.baseApiURL}/${endPoint}/${term}`;
-    // to get repos
-    // let apiUrl = `${this.baseApiURL}/${endPoint}/${term}/repos`;
-
     return this.http.get(apiUrl);
   }
 }

@@ -5,62 +5,66 @@
     <div class="card-body">
       <div class="card bg-secondary text-white">
         <div class="card-body">
-
-          <form action="" class="search-form">
+<!--  -->
+          <form class="search-form" action="" #quoteForm="ngForm" (ngSubmit)="doSearch(text)">
             <div class="form-group ">
               <label for="searchItem">Search GitHub</label>
-              <input class="form-control" type="text" placeholder="Enter username or repository name" #text >
+              <input class="form-control" type="text" placeholder="Enter username or repository name" [(ngModel)]="text" name="text" (keyup)="findProfile()">
             </div>
             <br>
-            <button type="submit" (click)="doSearch(text.value)"
-              class="btn btn-lg btn-dark btn-outline-warning">Search</button>
             <hr>
           </form>
-
+<!--  -->
         </div>
       </div>
     </div>
   </div>
   <hr>
 
-<!-- results -->
+  <!-- results -->
 
-<div class="card bg-dark text-white">
-  <div *ngIf="profile">
-    <div class="">
-      <div class="card-header">
-        {{profile.name}} <small>({{profile.login}})</small>
-        <span *ngIf="profile.company">, Works at {{profile.company}}</span>
-        {{profile.location}}
-      </div>
+  <div class="card bg-dark text-white">
+    <div *ngIf="profile">
       <div class="">
-        <div class="row">
-          <!-- image -->
-          <div class="col-sm-4">
-            <img src="{{profile.avatar_url}}" class="img-circle img-fluid rounded" alt="Profile Image" style="padding: 2em;">
-          </div>
+        <div class="card-header">
+          {{profile.name}} <small>({{profile.login}})</small>
+          <span *ngIf="profile.company">, Works at {{profile.company}}</span>
+          {{profile.location}}
+        </div>
+        <div class="">
+          <div class="row">
+            <!-- image -->
+            <div class="col-sm-4">
+              <img src="{{profile.avatar_url}}" class="img-circle img-fluid rounded" alt="Profile Image"
+                style="padding: 2em;">
+            </div>
 
 
-          <!-- repos -->
-          <div class="col-sm-8">
-            <div>
-              <!--  -->
-              <table class="table table-dark table-striped" *ngFor="let repo of repositories">
-                <thead >
-                  <tr>
-                    <th>Repo name</th>
-                    <th>Link</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><p class="btn btn-sm btn-warning pull-right">{{repo.name}}</p></td>
-                    <td><a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project on github</a></td>
-                    <td><p class="btn btn-sm btn-warning pull-right">{{repo.description}}</p></td>
-                  </tr>
-                </tbody>
-              </table>
+            <!-- repos -->
+            <div class="col-sm-8">
+              <div>
+                <!--  -->
+                <table class="table table-dark table-striped" *ngFor="let repo of repositories">
+                  <thead>
+                    <tr>
+                      <th>Repo name</th>
+                      <th>Link</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p class="btn btn-sm btn-warning pull-right">{{repo.name}}</p>
+                      </td>
+                      <td><a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View
+                          this project on github</a></td>
+                      <td>
+                        <p class="btn btn-sm btn-warning pull-right">{{repo.description}}</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
               </div>
 
@@ -71,4 +75,4 @@
     </div>
   </div>
 
-</div> 
+</div>

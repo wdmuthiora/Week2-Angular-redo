@@ -9,10 +9,10 @@ import { User } from '../../classes/user';
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.css'],
 })
-  
 export class SearchFormComponent implements OnInit {
- @ Output() profile!: User;
- @ Output() repositories:any[]=[];
+  @Output() profile!: User;
+  @Output() repositories: any[] = [];
+  text!: string;
 
   constructor(
     private githubuserService: GithubSearchService,
@@ -33,7 +33,14 @@ export class SearchFormComponent implements OnInit {
     });
   }
 
+  findProfile() {
+    this.githubuserService.updateProfile(this.text);
+    this.githubrepoService.updateProfile(this.text);
+
+    this.doSearch;
+  }
+
   ngOnInit(): void {
-    this.doSearch('wdmuthiora');
+    this.doSearch(this.text);
   }
 }
